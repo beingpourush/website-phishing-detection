@@ -1,31 +1,51 @@
 # Website Phishing Detection Using Machine Learning
 
-## About the Project
+## 📌 Project Overview
 
-This project focuses on detecting phishing websites using Machine Learning classification algorithms. It uses website-related features to classify websites into two categories based on the labels provided in the dataset.
+This project uses machine learning classification algorithms to distinguish between legitimate and phishing websites using precomputed website features. Four classification models are trained and evaluated to compare their predictive performance.
 
-The project is implemented using Python and Scikit-learn in a Jupyter Notebook / Google Colab environment.
+## 📊 Dataset Information
 
-## Machine Learning Algorithms
+- **Total samples:** 11,054
+- **Input features:** 30
+- **Test samples:** 2,211
+- **Target labels:** `-1` and `1`
+- **Problem type:** Supervised Machine Learning — Binary Classification
 
-The following algorithms are explored in this project:
+*Note: Verify the exact meaning of the target labels using the original dataset documentation.*
 
-- Logistic Regression
-- Decision Tree Classifier
-- Random Forest Classifier
-- Multi-Layer Perceptron (MLP)
+## 🤖 Machine Learning Models
 
-## Dataset
+The following models were trained and evaluated:
 
-- **Number of samples:** 11,054
-- **Number of input features:** 30
-- **Target classes:** -1 and 1
+1. Logistic Regression
+2. Decision Tree Classifier
+3. Random Forest Classifier
+4. Neural Network (MLP Classifier)
 
-The exact meaning of each class should be confirmed from the original dataset documentation.
+## 📈 Model Performance
 
-**Dataset Source:** Add the original dataset URL here.
+| Model | Accuracy |
+|---|---:|
+| Random Forest | **97.42%** |
+| Decision Tree | 96.88% |
+| Neural Network (MLP) | 95.52% |
+| Logistic Regression | 93.58% |
 
-## Technologies Used
+**Best-performing model:** Random Forest Classifier, with an accuracy of **97.42%**.
+
+
+## ⚙️ Project Workflow
+
+1. Load and inspect the phishing website dataset.
+2. Separate the 30 input features from the target labels.
+3. Split the dataset into training and testing sets.
+4. Train four classification models.
+5. Compare performance using accuracy, precision, recall, and F1-score.
+6. Generate a classification report and confusion matrix.
+7. Examine feature importance where supported by the model.
+
+## 🛠️ Technologies Used
 
 - Python
 - Pandas
@@ -35,54 +55,22 @@ The exact meaning of each class should be confirmed from the original dataset do
 - Jupyter Notebook
 - Google Colab
 
-## Project Workflow
+## 🚀 How to Run
 
-1. Load and inspect the dataset.
-2. Separate input features and target labels.
-3. Split the data into training and testing sets.
-4. Train multiple Machine Learning classification models.
-5. Evaluate and compare model performance.
-6. Visualize the confusion matrix and feature importance.
-7. Save the trained model for future use.
+1. Clone or download this repository.
+2. Open the notebook in Google Colab or Jupyter Notebook.
+3. Upload the dataset and configure its file path as expected by the notebook.
+4. Run the notebook cells in order to train and evaluate the models.
 
-## How to Run
+## ⚠️ Limitations
 
-### Option 1: Google Colab
+- The notebook uses precomputed dataset features rather than extracting all 30 features directly from a newly entered URL.
+- It does not include a complete website interface or a validated live URL detection system.
+- Performance on this test set does not guarantee the same results on new, real-world websites.
+- Dataset quality, feature definitions, and class-label interpretation affect the reliability of predictions.
 
-1. Download or clone this repository.
-2. Open the `.ipynb` notebook in Google Colab.
-3. Upload the dataset file `phishing.csv` to the Colab environment.
-4. Update the dataset path if required.
-5. Run the notebook cells in order.
 
-### Option 2: Run Locally
 
-Install the required libraries:
+## 👨‍💻 Project Summary
 
-```bash
-pip install pandas numpy scikit-learn matplotlib joblib jupyter
-```
-
-Open the notebook using Jupyter Notebook or JupyterLab and ensure the dataset path is configured correctly.
-
-## Evaluation Metrics
-
-The models can be evaluated using:
-
-- Accuracy
-- Precision
-- Recall
-- F1-score
-- Confusion Matrix
-
-Actual evaluation results should be added after running the notebook.
-
-## Limitations
-
-- The current notebook works with precomputed dataset features.
-- Live URL prediction requires a compatible and validated URL feature extraction pipeline.
-- Results on the supplied dataset do not guarantee accurate detection of new phishing websites.
-
-## Disclaimer
-
-This project is intended for educational purposes only. Its predictions should not be treated as a guarantee that a website is safe or malicious.
+A machine learning classification project comparing four algorithms for website phishing detection using 30 precomputed features and 11,054 dataset samples. Random Forest achieved the highest test accuracy of **97.42%**, followed by Decision Tree at **96.88%**, Neural Network at **95.52%**, and Logistic Regression at **93.58%**.
